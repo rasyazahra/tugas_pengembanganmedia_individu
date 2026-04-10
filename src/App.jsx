@@ -6,6 +6,7 @@ import Curriculum from './pages/Curriculum';
 import Extracurricular from './pages/Extracurricular';
 import Policy from './pages/Policy';
 import Counseling from './pages/Counseling';
+import Articles from './pages/Articles';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -51,6 +52,7 @@ const Navbar = () => {
         </Link>
         <div className={`nav-links ${isOpen ? 'open' : ''}`}>
           <Link to="/" className={isActive('/')} onClick={() => setIsOpen(false)}>Beranda</Link>
+          <Link to="/artikel" className={isActive('/artikel')} onClick={() => setIsOpen(false)}>Berita Sekolah</Link>
           <Link to="/kurikulum" className={isActive('/kurikulum')} onClick={() => setIsOpen(false)}>Kurikulum</Link>
           <Link to="/ekstrakurikuler" className={isActive('/ekstrakurikuler')} onClick={() => setIsOpen(false)}>Ekstrakurikuler</Link>
           <Link to="/policy" className={isActive('/policy') || isActive('/counseling') ? 'active' : ''} onClick={() => setIsOpen(false)}>Layanan BK</Link>
@@ -102,6 +104,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/artikel" element={<Articles />} />
             <Route path="/kurikulum" element={<Curriculum />} />
             <Route path="/ekstrakurikuler" element={<Extracurricular />} />
             <Route path="/policy" element={<Policy />} />
